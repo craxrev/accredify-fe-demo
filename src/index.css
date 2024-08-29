@@ -29,6 +29,31 @@
     font-style: normal;
   }
 
+  @font-face {
+    font-family: "Pulp Display";
+    src: url("assets/fonts/PulpDisplay-Bold.eot");
+    src: local("assets/fonts/Pulp Display Bold"), local("PulpDisplay-Bold"),
+      url("assets/fonts/PulpDisplay-Bold.eot?#iefix")
+        format("embedded-opentype"),
+      url("assets/fonts/PulpDisplay-Bold.woff") format("woff"),
+      url("assets/fonts/PulpDisplay-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Pulp Display";
+    src: url("assets/fonts/PulpDisplay-Regular.eot");
+    src: local("assets/fonts/Pulp Display Regular"),
+      local("PulpDisplay-Regular"),
+      url("assets/fonts/PulpDisplay-Regular.eot?#iefix")
+        format("embedded-opentype"),
+      url("assets/fonts/PulpDisplay-Regular.woff") format("woff"),
+      url("assets/fonts/PulpDisplay-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
   body {
     @apply font-display;
     @apply leading-[1.5];

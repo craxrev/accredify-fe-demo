@@ -18,16 +18,16 @@ export const ProgressBar = ({ percentage, colour }) => {
     <div className="relative">
       <svg width={200} height={200}>
         <g transform={`rotate(-90 ${"100 100"})`}>
-          <Circle colour="lightgrey" />
+          <Circle colour="#e8e9eb" />
           <Circle colour={colour} pct={pct} />
         </g>
       </svg>
-      <CountUp suffix="%" end={pct} delay={0.5} duration={0.75}>
+      <CountUp suffix="%" end={pct} delay={0.25} duration={1}>
         {({ countUpRef }) => (
           <div>
             <span
               ref={countUpRef}
-              className="absolute font-bold text-accent text-2xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              className="absolute tracking-widest	 font-bold font-pulp text-accent text-2xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
             />
           </div>
         )}

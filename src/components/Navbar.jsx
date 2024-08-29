@@ -3,6 +3,7 @@ import IconDocument from "../assets/icons/document.svg?react";
 import IconSecurity from "../assets/icons/security.svg?react";
 import IconBulb from "../assets/icons/bulb.svg?react";
 import IconSettings from "../assets/icons/settings.svg?react";
+
 const NavbarLinks = [
   {
     name: "Home",

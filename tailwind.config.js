@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         display: ["Proxima Nova", "sans-serif"],
+        pulp: ["Pulp Display", "sans-serif"],
       },
       colors: {
         grey: "#5B6270",
