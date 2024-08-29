@@ -7,9 +7,7 @@
   @font-face {
     font-family: "Proxima Nova";
     src: url("assets/fonts/ProximaNova-Bold.eot");
-    src:
-      local("assets/fonts/Proxima Nova Bold"),
-      local("ProximaNova-Bold"),
+    src: local("assets/fonts/Proxima Nova Bold"), local("ProximaNova-Bold"),
       url("assets/fonts/ProximaNova-Bold.eot?#iefix")
         format("embedded-opentype"),
       url("assets/fonts/ProximaNova-Bold.woff") format("woff"),
@@ -21,8 +19,7 @@
   @font-face {
     font-family: "Proxima Nova";
     src: url("assets/fonts/ProximaNova-Regular.eot");
-    src:
-      local("assets/fonts/Proxima Nova Regular"),
+    src: local("assets/fonts/Proxima Nova Regular"),
       local("ProximaNova-Regular"),
       url("assets/fonts/ProximaNova-Regular.eot?#iefix")
         format("embedded-opentype"),
@@ -34,7 +31,7 @@
 
   body {
     @apply font-display;
-    @apply leading-[1.5]
+    @apply leading-[1.5];
   }
 
   h1 {
@@ -55,4 +52,7 @@
   h6 {
     @apply text-sm/[1.6];
   }
+}
+circle {
+  transition: all 0.7s ease-in-out;
 }
