@@ -7,7 +7,7 @@ const cleanPercentage = (percentage) => {
   return tooLow ? 0 : tooHigh ? 100 : +percentage;
 };
 
-export const ProgressBar = ({ percentage, colour }) => {
+const ProgressBar = ({ percentage, colour }) => {
   const [pct, setPct] = React.useState(0);
   React.useEffect(() => {
     setTimeout(() => {
@@ -55,3 +55,5 @@ const Circle = ({ colour, pct }) => {
     ></circle>
   );
 };
+
+export default ProgressBar;

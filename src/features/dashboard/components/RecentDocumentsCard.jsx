@@ -1,5 +1,7 @@
-import IconDocument from "../assets/icons/document.svg?react";
-import IconKebab from "../assets/icons/kebab.svg?react";
+import { Link } from "@tanstack/react-router";
+
+import IconDocument from "@/assets/icons/document.svg?react";
+import IconKebab from "@/assets/icons/kebab.svg?react";
 
 const documents = [
   {
@@ -24,14 +26,16 @@ const documents = [
   },
 ];
 
-export const RecentDocuments = () => {
+const RecentDocumentsCard = () => {
   return (
     <div className="flex flex-col w-full">
       <div className="flex items-center mb-2  justify-between">
         <h4 className="font-bold font-pulp ">Recent Documents</h4>
-        <h6 className=" font-bold text-accent  text-center">
-          View All Documents
-        </h6>
+        <Link to="/documents">
+          <h6 className=" font-bold text-accent  text-center">
+            View All Documents
+          </h6>
+        </Link>
       </div>
       <div className="border-[0.5px] border-grey/50 rounded-lg px-6 py-8 w-full ">
         <div className="flex justify-between mx-4 pb-5 border-b-[0.5px] border-grey/50">
@@ -63,3 +67,5 @@ export const RecentDocuments = () => {
     </div>
   );
 };
+
+export default RecentDocumentsCard;
