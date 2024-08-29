@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* FONT: Proxima Nova (Bold, Regular) */
+  @font-face {
+    font-family: "Proxima Nova";
+    src: url("assets/fonts/ProximaNova-Bold.eot");
+    src: local("assets/fonts/Proxima Nova Bold"), local("ProximaNova-Bold"),
+      url("assets/fonts/ProximaNova-Bold.eot?#iefix")
+        format("embedded-opentype"),
+      url("assets/fonts/ProximaNova-Bold.woff") format("woff"),
+      url("assets/fonts/ProximaNova-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Proxima Nova";
+    src: url("assets/fonts/ProximaNova-Regular.eot");
+    src: local("assets/fonts/Proxima Nova Regular"),
+      local("ProximaNova-Regular"),
+      url("assets/fonts/ProximaNova-Regular.eot?#iefix")
+        format("embedded-opentype"),
+      url("assets/fonts/ProximaNova-Regular.woff") format("woff"),
+      url("assets/fonts/ProximaNova-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  body {
+    @apply font-display;
+    @apply leading-[1.5];
+  }
+
+  h1 {
+    /* Unknown */
+  }
+  h2 {
+    @apply text-[28px]/[1.6];
+  }
+  h3 {
+    /* Unknown */
+  }
+  h4 {
+    @apply text-xl/[1.6];
+  }
+  h5 {
+    /* Unknown */
+  }
+  h6 {
+    @apply text-sm/[1.6];
+  }
+}
+circle {
+  transition: all 0.7s ease-in-out;
+}
