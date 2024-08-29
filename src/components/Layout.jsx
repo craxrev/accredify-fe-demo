@@ -21,9 +21,9 @@ const Layout = ({ children }) => {
   return (
     <div className="flex h-screen bg-black-light relative">
       <Navbar />
-      <div className="flex-1 flex flex-col h-screen rounded-tl-2xl rounded-bl-2xl bg-white">
+      <div className="flex-1 flex flex-col h-screen rounded-bl-2xl">
         <Header />
-        <main className="overflow-y-auto pb-10 flex-1 flex flex-col">
+        <main className="overflow-y-auto pb-10 flex-1 flex flex-col bg-white">
           {children}
         </main>
       </div>
