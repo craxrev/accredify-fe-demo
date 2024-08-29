@@ -1,5 +1,6 @@
 import React from "react";
 import CountUp from "react-countup";
+import PropTypes from "prop-types";
 
 const cleanPercentage = (percentage) => {
   const tooLow = !Number.isFinite(+percentage) || percentage < 0;
@@ -36,24 +37,34 @@ const ProgressBar = ({ percentage, colour }) => {
   );
 };
 
+ProgressBar.propTypes = {
+  percentage: PropTypes.number.isRequired,
+  colour: PropTypes.string.isRequired,
+};
+
 const Circle = ({ colour, pct }) => {
   const r = 90;
   const circ = 2 * Math.PI * r;
   const strokePct = ((100 - pct) * circ) / 100;
-  console.log(strokePct);
   return (
     <circle
+      data-testid="progress-circle" // Added test ID
       r={r}
       cx={100}
       cy={100}
       fill="transparent"
-      stroke={strokePct !== circ ? colour : ""} // remove colour as 0% sets full circumference
+      stroke={strokePct !== circ ? colour : ""}
       strokeWidth={"1rem"}
       strokeDasharray={circ}
       strokeDashoffset={strokePct || 0}
       strokeLinecap="round"
     ></circle>
   );
+};
+
+Circle.propTypes = {
+  colour: PropTypes.string.isRequired,
+  pct: PropTypes.number,
 };
 
 export default ProgressBar;

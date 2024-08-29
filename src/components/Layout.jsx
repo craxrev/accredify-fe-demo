@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
   }
 
   return (
-    <div className="flex h-screen bg-black-light relative">
+    <div data-testid="authorized-route" className="flex h-screen bg-black-light relative">
       <Navbar />
       <div className="flex-1 flex flex-col h-screen rounded-bl-2xl">
         <Header />
@@ -30,6 +30,7 @@ const Layout = ({ children }) => {
     </div>
   );
 };
+
 Layout.propTypes = {
   children: PropTypes.element.isRequired,
 };

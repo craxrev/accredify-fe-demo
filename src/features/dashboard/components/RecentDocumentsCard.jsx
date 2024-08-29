@@ -3,16 +3,13 @@ import { useQuery } from "@tanstack/react-query";
 
 import { getRecentDocuments } from "@/features/dashboard/api/documents";
 import Card from "@/components/Card";
-import IconDocument from "@/assets/icons/document.svg?react";
-import IconKebab from "@/assets/icons/kebab.svg?react";
+import DocumentRow from "@/components/DocumentRow";
 
 const RecentDocumentsCard = () => {
   const { data: documents = { data: [] }, isLoading } = useQuery({
     queryKey: ["documents"],
     queryFn: getRecentDocuments,
   });
-
-  console.log(documents);
 
   if (isLoading) {
     return <small>Loading...</small>;
@@ -34,31 +31,7 @@ const RecentDocumentsCard = () => {
           <p className="font-bold text-sm text-grey mr-10 px-4">Received on</p>
         </div>
         {documents.data.map((document, idx) => (
-          <div
-            key={idx}
-            className="flex justify-between w-full py-3 px-4 border-b-[0.5px] border-grey/50"
-          >
-            <div className="flex items-center w-8/12">
-              <div>
-                <IconDocument className="min-w-4 min-h-5  text-accent" />
-              </div>
-              <p className="ml-4 font-bold text-sm  text-black-light">
-                {document.document_name}
-              </p>
-            </div>
-            <div className="flex items-center ml-auto">
-              <p className="text-sm px-4 ">
-                {new Date(document.received_on).toLocaleDateString("en-GB", {
-                  year: "numeric",
-                  month: "short",
-                  day: "numeric",
-                })}
-              </p>
-              <button className="min-w-10 min-h-10 flex items-center justify-center">
-                <IconKebab className=" h-[18px] text-black-light" />
-              </button>
-            </div>
-          </div>
+          <DocumentRow key={idx + "document"} document={document} />
         ))}
       </Card>
     </div>

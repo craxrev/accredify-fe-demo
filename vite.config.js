@@ -11,6 +11,11 @@ const __dirname = path.dirname(__filename);
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [TanStackRouterVite(), react(), svgr()],
+  test: {
+    environment: "jsdom",
+    globals: true,
+    setupFiles: "./src/components/tests/setup.js",
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
