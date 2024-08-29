@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer base {
   /* FONT: Proxima Nova (Bold, Regular) */
   @font-face {
