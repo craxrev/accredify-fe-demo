@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, test, expect } from "vitest";
-import DocumentRow from "@/components/DocumentRow"; 
+import DocumentRow from "@/features/dashboard/components/DocumentRow";
 
 describe("DocumentRow", () => {
   test("renders document information correctly", () => {

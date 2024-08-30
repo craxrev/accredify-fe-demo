@@ -10,7 +10,7 @@ vi.mock("@tanstack/react-query", () => ({
 vi.mock("@tanstack/react-router", () => ({
   Link: vi.fn().mockImplementation(({ children }) => <div>{children}</div>),
 }));
-vi.mock("@/components/DocumentRow", () => ({
+vi.mock("@/features/dashboard/components/DocumentRow", () => ({
   __esModule: true,
   default: ({ document }) => (
     <div>
@@ -39,8 +39,8 @@ describe("RecentDocumentsCard Component", () => {
   test("should render document rows when documents are available", async () => {
     const mockDocuments = {
       data: [
-        { name: "Document 1", receivedOn: "2024-01-01" },
-        { name: "Document 2", receivedOn: "2024-02-01" },
+        { id: 1, name: "Document 1", receivedOn: "2024-01-01" },
+        { id: 2, name: "Document 2", receivedOn: "2024-02-01" },
       ],
     };
 

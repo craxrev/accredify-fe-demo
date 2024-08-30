@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import { getRecentDocuments } from "@/features/dashboard/api/documents";
 import Card from "@/components/Card";
-import DocumentRow from "@/components/DocumentRow";
+import DocumentRow from "@/features/dashboard/components/DocumentRow";
 
 /**
  * @typedef {import('../api/documents').Documents} Documents
@@ -43,8 +43,8 @@ const RecentDocumentsCard = () => {
           <p className="font-bold text-sm text-grey ">Document Name</p>
           <p className="font-bold text-sm text-grey mr-10 px-4">Received on</p>
         </div>
-        {documents.data.map((document, idx) => (
-          <DocumentRow key={idx + "document"} document={document} />
+        {documents.data.map((document) => (
+          <DocumentRow key={document.id} document={document} />
         ))}
       </Card>
     </div>

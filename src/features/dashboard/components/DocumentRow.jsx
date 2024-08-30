@@ -3,7 +3,7 @@ import IconDocument from "@/assets/icons/document.svg?react";
 import IconKebab from "@/assets/icons/kebab.svg?react";
 
 /**
- * @typedef {import('../features/dashboard/api/documents').Documents["data"][number]} Document
+ * @typedef {import('../api/documents').Documents["data"][number]} Document
  */
 
 /**
