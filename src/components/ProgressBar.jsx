@@ -23,7 +23,7 @@ const ProgressBar = ({ percentage, colour }) => {
           <Circle colour={colour} pct={pct} />
         </g>
       </svg>
-      <CountUp suffix="%" end={pct} delay={0.25} duration={1}>
+      <CountUp suffix="%" end={pct} delay={0.25} duration={0.5}>
         {({ countUpRef }) => (
           <div>
             <span

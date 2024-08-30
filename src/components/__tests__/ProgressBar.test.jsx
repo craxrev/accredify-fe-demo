@@ -1,5 +1,5 @@
 import { render, screen, waitFor } from "@testing-library/react";
-import { describe, it, expect, vi } from "vitest";
+import { describe, test, expect, vi } from "vitest";
 import ProgressBar from "@/components/ProgressBar";
 
 vi.mock("react-countup", () => ({
@@ -7,7 +7,7 @@ vi.mock("react-countup", () => ({
 }));
 
 describe("ProgressBar", () => {
-  it("renders the ProgressBar with the correct percentage and SVG circle attributes", async () => {
+  test("renders the ProgressBar with the correct percentage and SVG circle attributes", async () => {
     render(<ProgressBar percentage={75} colour="blue" />);
 
     await waitFor(() => {
@@ -21,7 +21,7 @@ describe("ProgressBar", () => {
 });
 
 describe("ProgressBar", () => {
-  it("renders the ProgressBar 100% when percentage is over 100", async () => {
+  test("renders the ProgressBar 100% when percentage is over 100", async () => {
     render(<ProgressBar percentage={175} colour="blue" />);
 
     await waitFor(() => {
@@ -31,7 +31,7 @@ describe("ProgressBar", () => {
 });
 
 describe("ProgressBar", () => {
-  it("renders the ProgressBar 0% when percentage is under 0", async () => {
+  test("renders the ProgressBar 0% when percentage is under 0", async () => {
     render(<ProgressBar percentage={-100} colour="blue" />);
 
     await waitFor(() => {

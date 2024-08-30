@@ -14,7 +14,31 @@ export default defineConfig({
   test: {
     environment: "jsdom",
     globals: true,
-    setupFiles: "./src/components/tests/setup.js",
+    setupFiles: "./src/components/__tests__/setup.js",
+    coverage: {
+      reporter: ["text", "json", "html"],
+      thresholds: {
+        lines: 80,
+        functions: 65,
+        branches: 65,
+        statements: 80,
+      },
+      exclude: [
+        "src/features/auth/utils",
+        "src/routeTree.gen.ts",
+        "**/node_modules/**",
+        "**/dist/**",
+        "**/api/**",
+        "**/.{idea,git,cache,output,temp}/**",
+        "**/**.config.{ts,js,cjs,tsx}",
+        "**.cjs",
+        "**/main.jsx",
+        "**/constants/**",
+        "**/routes/**",
+        "**/store/**",
+        "**/lib/**",
+      ],
+    },
   },
   resolve: {
     alias: {

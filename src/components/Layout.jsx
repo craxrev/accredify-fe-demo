@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
   const router = useRouterState();
 
   const renderLayout = UNAUTHENTICATED_ROUTES.some(
-    (route) => route === router.location.pathname,
+    (route) => route === router.location.pathname
   )
     ? "no-layout"
     : "default";
@@ -19,10 +19,13 @@ const Layout = ({ children }) => {
   }
 
   return (
-    <div data-testid="authorized-route" className="flex h-screen bg-black-light relative">
+    <div className="flex h-screen bg-black-light relative">
       <Navbar />
-      <div className="flex-1 flex flex-col h-screen rounded-bl-2xl">
-        <Header />
+      <Header />
+      <div
+        data-testid="authorized-route"
+        className="flex-1 flex flex-col h-screen rounded-bl-2xl"
+      >
         <main className="overflow-y-auto pb-10 flex-1 flex flex-col bg-white">
           {children}
         </main>

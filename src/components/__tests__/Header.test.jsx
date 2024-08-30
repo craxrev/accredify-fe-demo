@@ -47,6 +47,16 @@ describe("Header component", () => {
     expect(screen.getByText("JD")).toBeInTheDocument();
   });
 
+  test("should render the user's name and initials if the user has one letter", () => {
+    useUser.mockReturnValue({
+      user: { data: { name: "J" } },
+      isLoading: false,
+    });
+
+    render(<Header />);
+    expect(screen.getAllByText("J")).toHaveLength(2);
+  });
+
   test("should render a popover and call handleLogout on logout button click", async () => {
     useUser.mockReturnValue({
       user: { data: { name: "John Doe" } },

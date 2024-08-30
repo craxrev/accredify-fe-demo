@@ -33,12 +33,11 @@ const Header = () => {
 
   const handleLogout = () => {
     removeAuthCookies();
-
     navigate({ to: "/" });
   };
 
   if (isLoading) {
-    return <small>Loading...</small>;
+    return <div>Loading...</div>;
   }
 
   return (
