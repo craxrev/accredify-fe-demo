@@ -53,7 +53,7 @@ const Header = () => {
   }
 
   return (
-    <header className="h-16 border-b-[0.5px] border-grey/50 bg-white md:px-8 px-6 rounded-tl-2xl">
+    <header className="min-h-16 border-b-[0.5px] border-grey/50 bg-white md:px-8 px-6 rounded-tl-2xl">
       <Popover>
         <div className="w-full h-full items-center justify-end flex">
           <div className="w-6 h-6 bg-accent text-white text-sm text-center rounded-full">

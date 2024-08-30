@@ -42,7 +42,7 @@ const NavbarLinks = [
  */
 const Navbar = () => {
   return (
-    <nav className="w-[60px] h-full bg-black-light flex flex-col items-center">
+    <nav className="w-[60px] min-h-screen h-full bg-black-light flex flex-col items-center">
       <Link
         className=" mb-7 mt-2 w-full h-[60px] flex items-center justify-center"
         to="/"

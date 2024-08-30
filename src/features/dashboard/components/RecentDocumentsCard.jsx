@@ -31,7 +31,7 @@ const RecentDocumentsCard = () => {
           </h6>
         </Link>
       </div>
-      <Card>
+      <Card className="max-h-[440px] overflow-y-auto">
         <div className="flex justify-between mx-4 pb-5 border-b-[0.5px] border-grey/50">
           <p className="font-bold text-sm text-grey ">Document Name</p>
           <p className="font-bold text-sm text-grey mr-10 px-4">Received on</p>

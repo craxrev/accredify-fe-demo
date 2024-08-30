@@ -15,15 +15,14 @@ const Card = ({ className, children }) => {
   return (
     <div
       className={cn(
-        "border-[0.5px] border-grey/50 rounded-lg px-10 py-8 w-full flex flex-col",
-        className,
+        "border-[0.5px] border-grey/50 rounded-lg px-10 py-8 w-full h-full flex flex-col",
+        className
       )}
     >
       {children}
     </div>
   );
 };
-
 
 Card.propTypes = {
   className: PropTypes.string,
