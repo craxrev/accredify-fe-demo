@@ -43,7 +43,8 @@ pnpm run test:coverage
 ## Tests (E2E)
 
 ```bash
-pnpm run test:e2e
+pnpm run test:e2e ( for the e2e tests to work, you need to run the server first on port 3001 )
+
 ```
 
 ## API
@@ -66,7 +67,7 @@ The API in this app was simply fetching mock data directly from JSON files hoste
     │       ├── utils                 # Utility specific to the feature
     │       └── hooks                 # Hooks specific to the feature
     ├── hooks                         # Global hooks
-    ├── lib                           # Files that may habe utiltiy functions, constants, etc.
+    ├── lib                           # Files that may have utility functions, constants, etc.
     └── routes                        # Routes files, this can only be specific for when using TanStack Router
 
 
