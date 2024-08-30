@@ -1,8 +1,76 @@
-# React + Vite
+# Accordify techincal assignment app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple version SPA for the technical assignment.
 
-Currently, two official plugins are available:
+## Tech stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+  - TanStack Router
+  - TanStack Query
+  - Radix UI
+- Vite
+- Tailwind
+- JSdoc (I prefer TypeScript)
+- ESLint
+- Prettier
+
+## Installation
+
+```bash
+git clone https://github.com/Accordify/techincal-assignment-app.git
+cd techincal-assignment-app
+pnpm i
+```
+
+## Usage
+
+```bash
+pnpm run dev
+```
+
+## Tests (Unit)
+
+```bash
+pnpm run test
+```
+
+## Tests (coverage)
+
+```bash
+pnpm run test:coverage
+```
+
+## Tests (E2E)
+
+```bash
+pnpm run test:e2e
+```
+
+## API
+
+The API in this app was simply fetching mock data directly from JSON files hosted on GitHub (Gone with 2nd Options).
+
+## Folder structure
+
+```
+.
+├── README.md                         # This file
+├── ROADMAP.md                        # Roadmap
+└── src
+    ├── assets                        # Assets
+    ├── components                    # Components
+    ├── features                      # Features specific files
+    │   └── (auth | dashboard)
+    │       ├── api                   # API related files: where we fetch data from external sources
+    │       ├── components            # Components specific to the feature
+    │       ├── utils                 # Utility specific to the feature
+    │       └── hooks                 # Hooks specific to the feature
+    ├── hooks                         # Global hooks
+    ├── lib                           # Files that may habe utiltiy functions, constants, etc.
+    └── routes                        # Routes files, this can only be specific for when using TanStack Router
+
+
+## License
+
+null
+```
