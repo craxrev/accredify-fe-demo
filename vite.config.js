@@ -3,6 +3,7 @@ import { fileURLToPath } from "url";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import svgr from "vite-plugin-svgr";
+import { configDefaults } from "vitest/config";
 import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -15,6 +16,7 @@ export default defineConfig({
     environment: "jsdom",
     globals: true,
     setupFiles: "./src/components/__tests__/setup.js",
+    exclude: [...configDefaults.exclude, "**/**.spec.{ts,js,cjs,tsx}"],
     coverage: {
       reporter: ["text", "json", "html"],
       thresholds: {
