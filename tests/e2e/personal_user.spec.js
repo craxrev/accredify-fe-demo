@@ -24,5 +24,5 @@ test("Personal user login flow", async ({ page }) => {
 
   await page.goto("http://localhost:3001/dashboard");
   await page.waitForTimeout(2000);
-  expect(page).toHaveURL("http://localhost:3001/login");
+  await page.waitForURL("**/login");
 });
