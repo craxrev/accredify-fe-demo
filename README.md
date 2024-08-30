@@ -17,9 +17,9 @@ A simple version SPA for the technical assignment.
 ## Installation
 
 ```bash
-git clone https://github.com/Accordify/techincal-assignment-app.git
-cd techincal-assignment-app
-pnpm i
+git clone https://github.com/StjepanSuton/accredify-fe-demo.git
+cd accredify-fe-demo
+pnpm install
 ```
 
 ## Usage
