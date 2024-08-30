@@ -10,6 +10,12 @@ import {
 import IconCaret from "@/assets/icons/caret.svg?react";
 import IconLogout from "@/assets/icons/logout.svg?react";
 
+/**
+ * Get the first and last initials of a name
+ *
+ * @param {string} name - The name to get initials from
+ * @returns {string} The first and last initials of the name
+ */
 function getShortenedName(name) {
   const parts = name.trim().split(/\s+/);
 
@@ -26,6 +32,12 @@ function getShortenedName(name) {
   return "";
 }
 
+/**
+ * Header component
+ *
+ * @component
+ * @returns {React.JSX.Element} Header component
+ */
 const Header = () => {
   const navigate = useNavigate();
 

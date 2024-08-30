@@ -6,6 +6,11 @@ import {
 } from "@/features/auth/utils/authCookies.utils";
 import { getUser } from "@/features/dashboard/api/user";
 
+/**
+ * UseUser hook
+ *
+ * @returns {Object} The user object
+ */
 export const useUser = () => {
   const [currentUserType, setCurrentUserType] = useState(null);
 

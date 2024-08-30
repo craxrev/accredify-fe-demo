@@ -5,6 +5,12 @@ import { getGoals } from "@/features/dashboard/api/goals";
 import ProgressBar from "@/components/ProgressBar";
 import Card from "@/components/Card";
 
+/**
+ * CareerGoalCard component
+ *
+ * @component
+ * @returns {React.JSX.Element} CareerGoalCard component
+ */
 const CareerGoalCard = () => {
   const { data: goals = { data: [] }, isLoading } = useQuery({
     queryKey: ["goals"],

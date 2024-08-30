@@ -2,6 +2,16 @@ import PropTypes from "prop-types";
 import IconDocument from "@/assets/icons/document.svg?react";
 import IconKebab from "@/assets/icons/kebab.svg?react";
 
+/**
+ * DocumentRow component
+ *
+ * @component
+ * @param {Object} props - The component accepts document as props
+ * @param {Object} props.document - Document object
+ * @param {string} props.document.document_name - Document name
+ * @param {string} props.document.received_on - Document received on date
+ * @returns {React.JSX.Element} DocumentRow component
+ */
 const DocumentRow = ({ document }) => {
   return (
     <div className="flex justify-between w-full py-3 px-4 border-b-[0.5px] border-grey/50">

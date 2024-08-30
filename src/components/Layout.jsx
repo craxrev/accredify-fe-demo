@@ -5,11 +5,20 @@ import { UNAUTHENTICATED_ROUTES } from "@/lib/constants";
 import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
 
+/**
+ * Layout component
+ *
+ * @component
+ *
+ * @param {Object} props - The component accepts children as props
+ * @param {React.ReactNode} props.children - Child components
+ * @returns {React.JSX.Element} Layout component
+ */
 const Layout = ({ children }) => {
   const router = useRouterState();
 
   const renderLayout = UNAUTHENTICATED_ROUTES.some(
-    (route) => route === router.location.pathname
+    (route) => route === router.location.pathname,
   )
     ? "no-layout"
     : "default";

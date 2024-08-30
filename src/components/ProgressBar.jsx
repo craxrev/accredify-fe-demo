@@ -2,12 +2,27 @@ import React from "react";
 import CountUp from "react-countup";
 import PropTypes from "prop-types";
 
-const cleanPercentage = (percentage) => {
+/**
+ * Cleans the progress percentage
+ *
+ * @param {number} percentage - Progress percentage
+ * @returns {number} Cleaned progress percentage
+ */
+function cleanPercentage (percentage) {
   const tooLow = !Number.isFinite(+percentage) || percentage < 0;
   const tooHigh = percentage > 100;
   return tooLow ? 0 : tooHigh ? 100 : +percentage;
 };
 
+/**
+ * ProgressBar component
+ *
+ * @component
+ * @param {Object} props - The component accepts percentage and colour as props
+ * @param {number} props.percentage - Progress percentage
+ * @param {string} props.colour - Progress colour
+ * @returns {React.JSX.Element} ProgressBar component
+ */
 const ProgressBar = ({ percentage, colour }) => {
   const [pct, setPct] = React.useState(0);
   React.useEffect(() => {
@@ -42,6 +57,15 @@ ProgressBar.propTypes = {
   colour: PropTypes.string.isRequired,
 };
 
+/**
+ * Circle component
+ *
+ * @component
+ * @param {Object} props - The component accepts colour and pct as props
+ * @param {string} props.colour - Circle colour
+ * @param {number} props.pct - Circle percentage
+ * @returns {React.JSX.Element} Circle component
+ */
 const Circle = ({ colour, pct }) => {
   const r = 90;
   const circ = 2 * Math.PI * r;

@@ -34,6 +34,12 @@ const NavbarLinks = [
   },
 ];
 
+/**
+ * Navbar component
+ *
+ * @component
+ * @returns {React.JSX.Element} Navbar component
+ */
 const Navbar = () => {
   return (
     <nav className="w-[60px] h-full bg-black-light flex flex-col items-center">

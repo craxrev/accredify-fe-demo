@@ -5,6 +5,12 @@ import { protectRoute } from "@/features/auth/utils/protectRoute";
 import CareerGoalCard from "@/features/dashboard/components/CareerGoalCard";
 import RecentDocumentsCard from "@/features/dashboard/components/RecentDocumentsCard";
 
+/**
+ * Dashboard route component
+ *
+ * @component
+ * @returns {React.JSX.Element} Dashboard route component
+ */
 const Dashboard = () => {
   const { user, isLoading } = useUser();
 

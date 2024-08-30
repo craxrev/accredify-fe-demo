@@ -1,5 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
+/**
+ * Index route component
+ *
+ * @component
+ * @returns {React.JSX.Element} Index route component
+ */
 const Index = () => {
   return (
     <div>

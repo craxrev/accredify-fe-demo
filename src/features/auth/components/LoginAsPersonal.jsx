@@ -4,6 +4,12 @@ import { useMutation } from "@tanstack/react-query";
 import { login as loginApi } from "@/features/auth/api/login";
 import { setAuthCookies } from "@/features/auth/utils/authCookies.utils";
 
+/**
+ * LoginAsManaged component
+ *
+ * @component
+ * @returns {React.JSX.Element} LoginAsManaged component
+ */
 const LoginAsPersonal = () => {
   const navigate = useNavigate();
   const { mutateAsync: login } = useMutation({

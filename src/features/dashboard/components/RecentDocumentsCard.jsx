@@ -5,6 +5,12 @@ import { getRecentDocuments } from "@/features/dashboard/api/documents";
 import Card from "@/components/Card";
 import DocumentRow from "@/components/DocumentRow";
 
+/**
+ * RecentDocumentsCard component
+ *
+ * @component
+ * @returns {React.JSX.Element} RecentDocumentsCard component
+ */
 const RecentDocumentsCard = () => {
   const { data: documents = { data: [] }, isLoading } = useQuery({
     queryKey: ["documents"],
