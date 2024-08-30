@@ -3,7 +3,16 @@ import { useQuery } from "@tanstack/react-query";
 
 import { getRecentDocuments } from "@/features/dashboard/api/documents";
 import Card from "@/components/Card";
-import DocumentRow from "@/features/dashboard/components/DocumentRow";
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableHead,
+  TableRow,
+  TableCell,
+} from "@/components/ui/table";
+import IconDocument from "@/assets/icons/document.svg?react";
+import IconKebab from "@/assets/icons/kebab.svg?react";
 
 /**
  * @typedef {import('../api/documents').Documents} Documents
@@ -39,13 +48,41 @@ const RecentDocumentsCard = () => {
         </Link>
       </div>
       <Card className="max-h-[440px] overflow-y-auto">
-        <div className="flex justify-between mx-4 pb-5 border-b-[0.5px] border-grey/50">
-          <p className="font-bold text-sm text-grey ">Document Name</p>
-          <p className="font-bold text-sm text-grey mr-10 px-4">Received on</p>
-        </div>
-        {documents.data.map((document) => (
-          <DocumentRow key={document.id} document={document} />
-        ))}
+        <Table className="border-b-[0.5px] border-grey/50">
+          <TableHeader>
+            <TableRow>
+              <TableHead>Document Name</TableHead>
+              <TableHead className="text-right">Received on</TableHead>
+              <TableHead className="w-px"></TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {documents.data.map((document) => (
+              <TableRow key={document.id}>
+                <TableCell>
+                  <div className="flex items-center">
+                    <IconDocument className="min-w-4 min-h-5 text-accent" />
+                    <p className="inline-block ml-4 font-bold text-black-light">
+                      {document.document_name}
+                    </p>
+                  </div>
+                </TableCell>
+                <TableCell className="text-right">
+                  {new Date(document.received_on).toLocaleDateString("en-GB", {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  })}
+                </TableCell>
+                <TableCell>
+                  <button className="min-w-10 min-h-10 flex items-center justify-center">
+                    <IconKebab className=" h-[18px] text-black-light" />
+                  </button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </Card>
     </div>
   );

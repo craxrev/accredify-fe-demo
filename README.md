@@ -10,7 +10,7 @@ A simple version SPA for the technical assignment.
   - Radix UI
 - Vite
 - Tailwind
-- JSdoc (I prefer TypeScript)
+- JSdoc
 - ESLint
 - Prettier
 

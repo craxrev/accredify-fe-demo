@@ -10,15 +10,6 @@ vi.mock("@tanstack/react-query", () => ({
 vi.mock("@tanstack/react-router", () => ({
   Link: vi.fn().mockImplementation(({ children }) => <div>{children}</div>),
 }));
-vi.mock("@/features/dashboard/components/DocumentRow", () => ({
-  __esModule: true,
-  default: ({ document }) => (
-    <div>
-      <p>{document.name}</p>
-      <p>{document.receivedOn}</p>
-    </div>
-  ),
-}));
 
 describe("RecentDocumentsCard Component", () => {
   afterEach(() => {
@@ -39,8 +30,18 @@ describe("RecentDocumentsCard Component", () => {
   test("should render document rows when documents are available", async () => {
     const mockDocuments = {
       data: [
-        { id: 1, name: "Document 1", receivedOn: "2024-01-01" },
-        { id: 2, name: "Document 2", receivedOn: "2024-02-01" },
+        {
+          id: 1,
+          document_name: "Document 1",
+          received_on: "2024-01-01",
+          expected_received_on: "1 Jan 2024",
+        },
+        {
+          id: 2,
+          document_name: "Document 2",
+          received_on: "2024-02-01",
+          expected_received_on: "1 Feb 2024",
+        },
       ],
     };
 
@@ -53,8 +54,10 @@ describe("RecentDocumentsCard Component", () => {
     expect(screen.getByText("Recent Documents")).toBeInTheDocument();
     expect(screen.getByText("View All Documents")).toBeInTheDocument();
     mockDocuments.data.forEach((document) => {
-      expect(screen.getByText(document.name)).toBeInTheDocument();
-      expect(screen.getByText(document.receivedOn)).toBeInTheDocument();
+      expect(screen.getByText(document.document_name)).toBeInTheDocument();
+      expect(
+        screen.getByText(document.expected_received_on),
+      ).toBeInTheDocument();
     });
   });
 });
