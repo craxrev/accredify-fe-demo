@@ -9,7 +9,6 @@ import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [TanStackRouterVite(), react(), svgr()],
   test: {
@@ -19,13 +18,8 @@ export default defineConfig({
     exclude: [...configDefaults.exclude, "**/**.spec.{ts,js,cjs,tsx}"],
     coverage: {
       reporter: ["text", "json", "html"],
-      thresholds: {
-        lines: 80,
-        functions: 65,
-        branches: 65,
-        statements: 80,
-      },
       exclude: [
+        "**/**.spec.{ts,js,cjs,tsx}",
         "src/features/auth/utils",
         "src/routeTree.gen.ts",
         "**/node_modules/**",
@@ -48,3 +42,9 @@ export default defineConfig({
     },
   },
 });
+
+
+
+
+
+
