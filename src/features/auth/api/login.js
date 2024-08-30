@@ -1,10 +1,26 @@
-import { API_PERSONAL_USER_URL, API_MANAGED_USER_URL } from "@/lib/constants";
+import { API_MANAGED_USER_URL, API_PERSONAL_USER_URL } from "@/lib/constants";
+
+/**
+ * @typedef {{
+ *   data: {
+ *     id: number,
+ *     name: string,
+ *     email: string,
+ *     profile_picture_url: string,
+ *     current_organisation: {
+ *       id: number,
+ *       name: string,
+ *       is_personal: boolean,
+ *     }
+ *   },
+ * }} User
+ */
 
 /**
  * Login API
  *
- * @param {'personal' | 'managed'} type - The type of user to login
- * @returns {Promise<Object>} The user object
+ * @param {'managed' | 'personal'} type - The type of user to login
+ * @returns {Promise<User>} The user object
  */
 export const login = async (type) => {
   if (type === "managed") {

@@ -8,6 +8,7 @@ import { getAuthCookies } from "./authCookies.utils";
  *
  * @param {Object} opts - The options for the route
  * @param {Object} opts.location - The location object
+ * @param {string} opts.location.pathname - The pathname of the route
  * @throws Error if the user is not authenticated (no cookie) and the route is not in the UNAUTHENTICATED_ROUTES array
  */
 export const protectRoute = (opts) => {

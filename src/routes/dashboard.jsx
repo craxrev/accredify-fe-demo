@@ -6,12 +6,19 @@ import CareerGoalCard from "@/features/dashboard/components/CareerGoalCard";
 import RecentDocumentsCard from "@/features/dashboard/components/RecentDocumentsCard";
 
 /**
+ * @typedef {typeof import('../hooks/user').useUser} UseUser
+ */
+
+/**
  * Dashboard route component
  *
  * @component
  * @returns {React.JSX.Element} Dashboard route component
  */
 const Dashboard = () => {
+  /**
+   * @type {ReturnType<UseUser>}
+   */
   const { user, isLoading } = useUser();
 
   if (isLoading) {

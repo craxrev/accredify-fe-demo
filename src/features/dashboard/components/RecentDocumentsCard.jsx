@@ -6,12 +6,19 @@ import Card from "@/components/Card";
 import DocumentRow from "@/components/DocumentRow";
 
 /**
+ * @typedef {import('../api/documents').Documents} Documents
+ */
+
+/**
  * RecentDocumentsCard component
  *
  * @component
  * @returns {React.JSX.Element} RecentDocumentsCard component
  */
 const RecentDocumentsCard = () => {
+  /**
+   * @type ReturnType<typeof useQuery<Documents>>
+   */
   const { data: documents = { data: [] }, isLoading } = useQuery({
     queryKey: ["documents"],
     queryFn: getRecentDocuments,

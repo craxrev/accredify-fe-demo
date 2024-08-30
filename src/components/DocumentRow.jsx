@@ -3,13 +3,15 @@ import IconDocument from "@/assets/icons/document.svg?react";
 import IconKebab from "@/assets/icons/kebab.svg?react";
 
 /**
+ * @typedef {import('../features/dashboard/api/documents').Documents["data"][number]} Document
+ */
+
+/**
  * DocumentRow component
  *
  * @component
  * @param {Object} props - The component accepts document as props
- * @param {Object} props.document - Document object
- * @param {string} props.document.document_name - Document name
- * @param {string} props.document.received_on - Document received on date
+ * @param {Document} props.document - Document object
  * @returns {React.JSX.Element} DocumentRow component
  */
 const DocumentRow = ({ document }) => {

@@ -6,12 +6,19 @@ import ProgressBar from "@/components/ProgressBar";
 import Card from "@/components/Card";
 
 /**
+ * @typedef {import('../api/goals').Goals} Goals
+ */
+
+/**
  * CareerGoalCard component
  *
  * @component
  * @returns {React.JSX.Element} CareerGoalCard component
  */
 const CareerGoalCard = () => {
+  /**
+   * @type ReturnType<typeof useQuery<Goals>>
+   */
   const { data: goals = { data: [] }, isLoading } = useQuery({
     queryKey: ["goals"],
     queryFn: getGoals,

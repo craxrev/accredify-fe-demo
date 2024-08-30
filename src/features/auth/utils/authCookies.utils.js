@@ -3,9 +3,13 @@ import CookiesService from "js-cookie";
 import { AUTH_COOKIE } from "@/lib/constants";
 
 /**
+ * @typedef {import('../api/login').User["data"]} UserData
+ */
+
+/**
  * Set the auth cookies
  *
- * @param {Object} data - The data to set in the cookies
+ * @param {UserData} data - The data to set in the cookies
  */
 export const setAuthCookies = (data) => {
   if (data) {
@@ -23,7 +27,7 @@ export const removeAuthCookies = () => {
 /**
  * Get the auth cookies
  *
- * @returns {Object} The auth cookies
+ * @returns {{ data: UserData } | null} The auth cookies
  */
 export const getAuthCookies = () => {
   const cookie = CookiesService.get(AUTH_COOKIE);

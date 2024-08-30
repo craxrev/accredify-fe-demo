@@ -11,6 +11,10 @@ import IconCaret from "@/assets/icons/caret.svg?react";
 import IconLogout from "@/assets/icons/logout.svg?react";
 
 /**
+ * @typedef {typeof import('../hooks/user').useUser} UseUser
+ */
+
+/**
  * Get the first and last initials of a name
  *
  * @param {string} name - The name to get initials from
@@ -41,6 +45,9 @@ function getShortenedName(name) {
 const Header = () => {
   const navigate = useNavigate();
 
+  /**
+   * @type {ReturnType<UseUser>}
+   */
   const { user, isLoading } = useUser();
 
   const handleLogout = () => {

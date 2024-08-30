@@ -5,6 +5,10 @@ import { login as loginApi } from "@/features/auth/api/login";
 import { setAuthCookies } from "@/features/auth/utils/authCookies.utils";
 
 /**
+ * @typedef {import('../api/login').User} User
+ */
+
+/**
  * LoginAsManaged component
  *
  * @component
@@ -12,6 +16,10 @@ import { setAuthCookies } from "@/features/auth/utils/authCookies.utils";
  */
 const LoginAsManaged = () => {
   const navigate = useNavigate();
+
+  /**
+   * @type {ReturnType<typeof useMutation<User>>}
+   */
   const { mutateAsync: login } = useMutation({
     mutationFn: loginApi,
   });
