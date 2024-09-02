@@ -17,7 +17,7 @@ A simple version SPA for the technical assignment.
 ## Installation
 
 ```bash
-git clone https://github.com/StjepanSuton/accredify-fe-demo.git
+git clone https://github.com/craxrev/accredify-fe-demo.git
 cd accredify-fe-demo
 pnpm install
 ```
